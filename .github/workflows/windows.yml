@@ -7,7 +7,18 @@ jobs:
   build:
     runs-on: windows-2019
     steps:
-      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          choco install -y --no-progress conan --version=1.58.0
+          choco install -y --no-progress winflexbison3
+
+      - name: Checkout Zeek
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
           submodules: recursive
+
+      - name: Build Zeek
+        run: |
+          pwd
+          dir
