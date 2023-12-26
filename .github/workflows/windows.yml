@@ -11,7 +11,6 @@ jobs:
         run: |
           choco install -y --no-progress conan --version=1.58.0
           choco install -y --no-progress winflexbison3
-          refreshenv
         shell: cmd
 
       - name: Checkout Zeek
@@ -22,6 +21,7 @@ jobs:
 
       - name: Build Zeek
         run: |
+          refreshenv
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
           mkdir build
           cd build
