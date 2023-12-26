@@ -12,6 +12,7 @@ jobs:
           choco install -y --no-progress conan --version=1.58.0
           choco install -y --no-progress winflexbison3
           refreshenv
+        shell: cmd
 
       - name: Checkout Zeek
         uses: actions/checkout@v3
