@@ -26,3 +26,4 @@ jobs:
           cmake.exe .. -DCMAKE_BUILD_TYPE=release -DENABLE_ZEEK_UNIT_TESTS=yes -G Ninja
           cmake.exe --build .
           cmake.exe --install .
+        shell: cmd
